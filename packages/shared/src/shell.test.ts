@@ -5,7 +5,9 @@ import { COMMON_MACOS_PATHS, ensureCommonMacPaths, extractPathFromShellOutput, r
 describe("extractPathFromShellOutput", () => {
   it("extracts the path between capture markers", () => {
     expect(
-      extractPathFromShellOutput("__T3CODE_PATH_START__\n/opt/homebrew/bin:/usr/bin\n__T3CODE_PATH_END__\n"),
+      extractPathFromShellOutput(
+        "__T3CODE_PATH_START__\n/opt/homebrew/bin:/usr/bin\n__T3CODE_PATH_END__\n",
+      ),
     ).toBe("/opt/homebrew/bin:/usr/bin");
   });
 
